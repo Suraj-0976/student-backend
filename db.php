@@ -5,10 +5,9 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 
 $host = "localhost";
-$dbname = "crud_app";
+$dbname = "railway";
 $username = "root";
-$password = "";
-
+$password = "IsLzggkvlMILATUboDzAAMPsIdndYsZY";
 try {
 
     $pdo = new PDO(

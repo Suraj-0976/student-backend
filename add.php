@@ -1,16 +1,14 @@
 <?php
 
-require_once 'db.php';
-
 header('Content-Type: application/json');
+require_once 'db.php';
 
 try {
 
     $name  = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
 
-    if(empty($name) || empty($email)){
-
+    if(empty($name) || empty($email)) {
         echo json_encode([
             "status" => false,
             "message" => "All fields required"

@@ -1,15 +1,22 @@
 <?php
 
+header('Content-Type: application/json');
 require_once 'db.php';
 
-header('Content-Type: application/json');
+try {
 
-$stmt = $pdo->query("
-    SELECT *
-    FROM students
-    ORDER BY id DESC
-");
+    $stmt = $pdo->query("
+        SELECT *
+        FROM students
+        ORDER BY id DESC
+    ");
 
-echo json_encode(
-    $stmt->fetchAll(PDO::FETCH_ASSOC)
-);
+    echo json_encode($stmt->fetchAll());
+
+} catch(Exception $e){
+
+    echo json_encode([
+        "status" => false,
+        "message" => $e->getMessage()
+    ]);
+}

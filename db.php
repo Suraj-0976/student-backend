@@ -10,13 +10,15 @@ $password = "IsLzggkvlMILATUboDzAAMPsIdndYsZY";
 
 try {
 
-    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-
-    $pdo = new PDO($dsn, $username, $password, [
+    $pdo = new PDO(
+    "mysql:host=thomas.proxy.rlwy.net;port=18165;dbname=railway;charset=utf8mb4",
+    "root",
+    "IsLzggkvlMILATUboDzAAMPsIdndYsZY",
+    [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES => false
-    ]);
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]
+);
 
     $pdo->query("SELECT 1");
 
